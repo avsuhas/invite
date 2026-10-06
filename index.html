@@ -1,0 +1,316 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Kavya &amp; Suhas · Wedding Invitation</title>
+<meta name="description" content="Friday, 4 December 2026 · Lotus Arena, Bengaluru. Tap to open your invitation.">
+<meta name="theme-color" content="#16110d">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Kavya &amp; Suhas · Wedding Invitation">
+<meta property="og:description" content="Friday, 4 December 2026 · Lotus Arena, Bengaluru. Tap to open your invitation.">
+<meta property="og:url" content="https://avsuhas.github.io/kavya-suhas/">
+<meta property="og:image" content="https://avsuhas.github.io/kavya-suhas/preview.jpg">
+<meta property="og:image:width" content="640">
+<meta property="og:image:height" content="336">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://avsuhas.github.io/kavya-suhas/preview.jpg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Italianno&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Cormorant+SC:wght@400;500&display=swap">
+<style>
+/* Layout: a quiet gold-line unveiling → ivory letterpress cards on an espresso ground; script reserved for the names */
+:root{
+  --ground:#16110d;      /* espresso table the cards rest on */
+  --paper:#fbf6ec;       /* ivory card stock */
+  --paper-edge:#f1e6d1;
+  --wash:#f7f0e3;        /* cover paper */
+  --bronze:#8a6a3f;      /* names and titles on paper */
+  --gold:#b8955e;        /* hairlines, ornaments */
+  --champagne:#dcc496;   /* gold on dark */
+  --ink:#4a3b30;         /* body text on paper */
+  --muted:#968370;
+  --script:"Italianno","Snell Roundhand","Apple Chancery",cursive;
+  --serif:"Cormorant Garamond","Cormorant",Garamond,"Times New Roman",serif;
+  --caps:"Cormorant SC","Cormorant Garamond",Georgia,serif;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html,body{background:var(--ground)}
+body{margin:0;color:var(--ink);font-family:var(--serif);font-weight:400;font-size:19px;line-height:1.5;
+  padding-inline:16px;padding-block:28px 48px;
+  background:radial-gradient(120% 60% at 50% 0%,#271c15 0%,var(--ground) 60%) fixed,var(--ground);
+  -webkit-font-smoothing:antialiased;overflow-x:hidden}
+body.locked{overflow:hidden;height:100%}
+.wrap{max-width:430px;margin:0 auto;display:flex;flex-direction:column;gap:30px}
+
+/* ---------- Cover: gold hairlines draw themselves, names settle in ---------- */
+.cover{position:fixed;inset:0;z-index:50;display:grid;place-items:center;cursor:pointer;
+  background:radial-gradient(90% 70% at 50% 45%,#fdf9f1 0%,var(--wash) 55%,#efe3cd 100%);
+  transition:opacity 1.6s ease, filter 1.6s ease, transform 1.6s ease, visibility 0s linear 1.6s}
+.cover.gone{opacity:0;filter:blur(6px);transform:scale(1.03);visibility:hidden;pointer-events:none}
+.cover .frame{position:absolute;inset:18px;width:calc(100% - 36px);height:calc(100% - 36px);pointer-events:none;overflow:visible}
+.cover .frame rect{fill:none;stroke:var(--gold);vector-effect:non-scaling-stroke}
+.cover .frame2{position:absolute;inset:24px;border:.5px solid var(--gold);opacity:0;animation:fade2 2s ease 1.8s forwards;pointer-events:none}
+@keyframes fade2{to{opacity:.45}}
+.draw{stroke-dasharray:1;stroke-dashoffset:1;animation:draw 2.6s cubic-bezier(.6,.1,.3,1) forwards}
+.cover-inner{position:relative;display:grid;justify-items:center;gap:18px;text-align:center;padding-inline:24px}
+.ring{width:118px;height:118px;position:relative;display:grid;place-items:center}
+.ring svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+.ring circle{fill:none;stroke:var(--gold)}
+.ring .mono{font-family:var(--script);font-size:54px;line-height:1;color:var(--bronze);opacity:0;animation:fade 1.6s ease 1.6s forwards;transform:translateY(4px)}
+.cover-names{font-family:var(--script);font-size:clamp(58px,17vw,78px);line-height:.9;color:var(--bronze);margin:0;font-weight:400}
+.cover-names span{display:inline-block;opacity:0;filter:blur(4px);animation:settle 1.4s ease forwards}
+.cover-date{font-family:var(--caps);letter-spacing:.42em;font-size:13px;color:var(--muted);opacity:0;animation:fade 1.4s ease 3.4s forwards;padding-left:.42em}
+.cover-hint{font-family:var(--serif);font-style:italic;font-size:16px;color:var(--gold);opacity:0;animation:fade 1.2s ease 4.2s forwards, breathe 3s ease-in-out 5.4s infinite}
+@keyframes draw{to{stroke-dashoffset:0}}
+@keyframes fade{to{opacity:1}}
+@keyframes settle{to{opacity:1;filter:blur(0)}}
+@keyframes breathe{50%{opacity:.45}}
+
+/* ---------- Cards ---------- */
+.card{position:relative;border-radius:2px;padding:48px 28px 44px;text-align:center;
+  background:radial-gradient(120% 80% at 50% 0%,#fffbf3 0%,var(--paper) 55%,var(--paper-edge) 100%);
+  box-shadow:0 30px 60px -22px rgba(0,0,0,.75)}
+.card::before{content:"";position:absolute;inset:11px;border:.75px solid var(--gold);opacity:.7;pointer-events:none}
+.card::after{content:"";position:absolute;inset:15px;border:.5px solid var(--gold);opacity:.3;pointer-events:none}
+.corner{position:absolute;width:56px;height:56px;color:var(--gold)}
+.corner.tl{top:7px;left:7px}.corner.tr{top:7px;right:7px;transform:scaleX(-1)}
+.corner.bl{bottom:7px;left:7px;transform:scaleY(-1)}.corner.br{bottom:7px;right:7px;transform:scale(-1,-1)}
+.card-body{position:relative;display:flex;flex-direction:column;align-items:center;gap:14px}
+
+.monogram{width:76px;height:76px;border-radius:50%;display:grid;place-items:center;
+  box-shadow:inset 0 0 0 .75px var(--gold),inset 0 0 0 4px var(--paper),inset 0 0 0 4.75px rgba(184,149,94,.45)}
+.monogram span{font-family:var(--script);color:var(--bronze);font-size:38px;line-height:1;transform:translateY(3px)}
+.label{font-family:var(--caps);font-size:14px;letter-spacing:.22em;color:var(--muted)}
+.rule{display:flex;align-items:center;gap:10px;color:var(--gold);width:130px}
+.rule::before,.rule::after{content:"";flex:1;height:.75px;background:linear-gradient(90deg,transparent,var(--gold))}
+.rule::after{background:linear-gradient(270deg,transparent,var(--gold))}
+.rule i{font-style:normal;font-size:8px}
+.title{font-family:var(--serif);font-style:italic;font-weight:300;font-size:clamp(28px,8vw,34px);line-height:1.15;color:var(--bronze);margin:0;letter-spacing:.01em;text-wrap:balance}
+.lede{font-style:italic;font-weight:300;color:var(--ink);font-size:19px;max-width:28ch;text-wrap:balance;margin:0}
+.names{font-family:var(--script);color:var(--bronze);font-size:clamp(70px,20vw,88px);line-height:.8;font-weight:400;margin:0}
+.and{font-family:var(--serif);font-style:italic;font-weight:300;color:var(--gold);font-size:26px;line-height:1}
+.date-line{font-family:var(--serif);font-size:23px;font-weight:400;color:var(--ink);letter-spacing:.02em}
+.date-line small{display:block;font-family:var(--caps);font-size:13px;letter-spacing:.34em;color:var(--muted)}
+.venue{font-family:var(--caps);font-size:17px;letter-spacing:.16em;color:var(--ink)}
+.venue-sub{font-style:italic;font-weight:300;color:var(--muted);font-size:17px;margin-top:-12px}
+
+.btns{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:4px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:8px 18px;border-radius:999px;border:.75px solid var(--gold);
+  font-family:var(--caps);font-size:14px;letter-spacing:.16em;color:var(--bronze);text-decoration:none;background:transparent;
+  transition:background .3s,color .3s}
+.btn svg{width:12px;height:12px;fill:currentColor}
+.btn:hover{background:var(--bronze);color:var(--paper);border-color:var(--bronze)}
+.btn:focus-visible{outline:1.5px solid var(--bronze);outline-offset:3px}
+
+/* ---------- Order of the day strip ---------- */
+.day{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);align-items:center;gap:14px;text-align:center}
+.day .t{font-family:var(--caps);letter-spacing:.24em;font-size:13px;color:var(--gold)}
+.day .e{font-family:var(--script);font-size:clamp(34px,10.5vw,44px);color:var(--champagne);line-height:1}
+.day .mid{display:grid;justify-items:center;gap:6px}
+.day .mid b{font-family:var(--caps);font-weight:400;font-size:14px;letter-spacing:.28em;color:var(--champagne);padding-left:.28em}
+.day .mid::before,.day .mid::after{content:"";width:.75px;height:20px;background:linear-gradient(var(--gold),transparent)}
+.day .mid::before{background:linear-gradient(transparent,var(--gold))}
+.ornament{display:flex;align-items:center;gap:12px;color:var(--gold);font-size:11px}
+.ornament::before,.ornament::after{content:"";flex:1;height:.75px;background:linear-gradient(90deg,transparent,rgba(184,149,94,.6))}
+.ornament::after{background:linear-gradient(270deg,transparent,rgba(184,149,94,.6))}
+
+/* ---------- Countdown + events ---------- */
+.count{display:grid;grid-template-columns:repeat(4,1fr);gap:4px;width:100%;max-width:290px}
+.count div{display:grid;gap:4px}
+.count b{font-family:var(--serif);font-weight:300;font-size:38px;line-height:1;color:var(--bronze);font-variant-numeric:tabular-nums lining-nums}
+.count span{font-family:var(--caps);font-size:12px;letter-spacing:.2em;color:var(--muted)}
+.event{display:flex;flex-direction:column;align-items:center;gap:6px;width:100%}
+.event h3{margin:0;font-family:var(--script);font-weight:400;font-size:46px;line-height:.9;color:var(--bronze)}
+.event .when{font-size:19px}
+.event .time{font-family:var(--caps);letter-spacing:.18em;color:var(--gold);font-size:16px}
+.sep{width:60px;height:.75px;background:linear-gradient(90deg,transparent,var(--gold),transparent);margin-block:12px}
+
+/* ---------- Closing ---------- */
+.closing{text-align:center;display:grid;justify-items:center;gap:14px;padding-block:6px 10px}
+.closing h2{margin:0;font-family:var(--script);font-weight:400;font-size:clamp(46px,13vw,58px);line-height:1;color:var(--champagne);text-wrap:balance}
+.closing p{margin:0;font-style:italic;font-weight:300;color:#cdbb9c;font-size:19px}
+.closing .btn{color:var(--champagne);padding:11px 22px}
+.closing .btn:hover{background:var(--champagne);color:var(--ground);border-color:var(--champagne)}
+.sig{font-family:var(--caps);font-size:12px;letter-spacing:.32em;color:#7b6a58}
+
+/* soft lift once the cover is lifted (content is visible at rest; this only adds motion) */
+.lift{transition:transform 1.4s cubic-bezier(.2,.7,.2,1) .3s,opacity 1.4s ease .3s}
+body.locked .lift{transform:translateY(12px);opacity:.001}
+
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-delay:0s!important;transition-duration:.01ms!important;transition-delay:0s!important}
+}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="lotus-corner" viewBox="0 0 56 56">
+    <g fill="none" stroke="currentColor" stroke-linecap="round">
+      <path d="M4 52 V20 Q4 4 20 4 H52" stroke-width=".8"/>
+      <path d="M9 47 V24 Q9 9 24 9 H47" stroke-width=".45" opacity=".7"/>
+      <path d="M16 16 Q15 9 20 6 Q22 12 16 16Z" stroke-width=".7"/>
+      <path d="M16 16 Q9 15 6 20 Q12 22 16 16Z" stroke-width=".7"/>
+      <path d="M16 16 Q12 11 13 6" stroke-width=".45"/>
+      <path d="M16 16 Q11 12 6 13" stroke-width=".45"/>
+    </g>
+    <circle cx="16" cy="16" r="1.4" fill="currentColor"/>
+  </symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></symbol>
+  <symbol id="i-cal" viewBox="0 0 24 24"><path d="M19 4h-1V2h-2v2H8V2H6v2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 16H5V9h14v11zM7 11h5v5H7z"/></symbol>
+  <symbol id="i-chat" viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18a8 8 0 0 1-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8 8 0 1 1 12 20z"/></symbol>
+</svg>
+
+<div class="cover" id="cover" role="button" tabindex="0" aria-label="Open the wedding invitation">
+  <svg class="frame" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+    <rect class="draw" x="0" y="0" width="100" height="100" pathLength="1" stroke-width=".8"/>
+  </svg>
+  <div class="frame2" aria-hidden="true"></div>
+  <div class="cover-inner">
+    <div class="ring" aria-hidden="true">
+      <svg viewBox="0 0 118 118">
+        <circle class="draw" cx="59" cy="59" r="57" pathLength="1" stroke-width=".8" style="animation-delay:.6s;animation-duration:2s"/>
+        <circle class="draw" cx="59" cy="59" r="52" pathLength="1" stroke-width=".4" opacity=".6" style="animation-delay:.9s;animation-duration:2s"/>
+      </svg>
+      <span class="mono">K&amp;S</span>
+    </div>
+    <h1 class="cover-names" id="coverNames" aria-label="Kavya and Suhas">Kavya &amp; Suhas</h1>
+    <div class="cover-date">04 · 12 · 2026</div>
+    <div class="cover-hint">Tap to open</div>
+  </div>
+</div>
+
+<main class="wrap">
+
+  <section class="card lift" aria-label="Invitation">
+    <svg class="corner tl"><use href="#lotus-corner"/></svg><svg class="corner tr"><use href="#lotus-corner"/></svg>
+    <svg class="corner bl"><use href="#lotus-corner"/></svg><svg class="corner br"><use href="#lotus-corner"/></svg>
+    <div class="card-body">
+      <div class="monogram" aria-hidden="true"><span>K&amp;S</span></div>
+      <div class="label">With the blessings of our families</div>
+      <div class="rule"><i>◆</i></div>
+      <h2 class="title">The Wedding Celebration</h2>
+      <p class="lede">request the pleasure of your company at the wedding of</p>
+      <p class="names">Kavya</p>
+      <div class="and">and</div>
+      <p class="names">Suhas</p>
+      <div class="rule"><i>◆</i></div>
+      <div class="date-line"><small>Friday</small>4 December 2026</div>
+      <div class="venue">Lotus Arena</div>
+      <div class="btns">
+        <a class="btn" id="dir1" target="_blank" rel="noopener"><svg><use href="#i-pin"/></svg>Directions</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="day lift" aria-label="Order of the day">
+    <div><div class="t">8:30 AM</div><div class="e">Wedding</div></div>
+    <div class="mid"><b>4 DEC</b></div>
+    <div><div class="t">1:00 PM</div><div class="e">Reception</div></div>
+  </div>
+
+  <div class="ornament" aria-hidden="true">◆</div>
+
+  <section class="card" aria-label="Event details">
+    <svg class="corner tl"><use href="#lotus-corner"/></svg><svg class="corner tr"><use href="#lotus-corner"/></svg>
+    <svg class="corner bl"><use href="#lotus-corner"/></svg><svg class="corner br"><use href="#lotus-corner"/></svg>
+    <div class="card-body">
+      <h2 class="title">The celebration begins in</h2>
+      <div class="count" id="count">
+        <div><b id="cd-d">00</b><span>Days</span></div>
+        <div><b id="cd-h">00</b><span>Hrs</span></div>
+        <div><b id="cd-m">00</b><span>Mins</span></div>
+        <div><b id="cd-s">00</b><span>Secs</span></div>
+      </div>
+      <div class="sep"></div>
+
+      <div class="event">
+        <h3>Wedding</h3>
+        <div class="when">Friday · 4 December 2026</div>
+        <div class="time">8:30 AM</div>
+        <div class="venue">Lotus Arena</div>
+        <div class="btns">
+          <a class="btn" id="dir2" target="_blank" rel="noopener"><svg><use href="#i-pin"/></svg>Directions</a>
+        </div>
+      </div>
+      <div class="sep"></div>
+
+      <div class="event">
+        <h3>Reception</h3>
+        <div class="when">Friday · 4 December 2026</div>
+        <div class="time">1:00 PM onwards</div>
+        <div class="venue">Lotus Arena</div>
+        <div class="btns">
+          <a class="btn" id="dir3" target="_blank" rel="noopener"><svg><use href="#i-pin"/></svg>Directions</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="closing">
+    <h2>We look forward to celebrating with you</h2>
+    <p>Your presence is our blessing.</p>
+    <a class="btn" id="wa" target="_blank" rel="noopener"><svg><use href="#i-chat"/></svg>Share via WhatsApp</a>
+    <div class="sig">Kavya &amp; Suhas · 2026</div>
+  </section>
+</main>
+
+<script>
+(function(){
+  var INVITE_URL = "https://avsuhas.github.io/kavya-suhas/";
+  var ADDRESS = "Lotus Arena, Survey No. 214, Shivapura, Kasaba Hobli, Doddaballapur Taluk, near L&T Factory, Bengaluru 562163";
+  var maps = "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(ADDRESS);
+  ["dir1","dir2","dir3"].forEach(function(id){ document.getElementById(id).href = maps; });
+
+  function gcal(title, start, end){
+    return "https://calendar.google.com/calendar/render?action=TEMPLATE&text=" + encodeURIComponent(title) +
+      "&dates=" + start + "/" + end + "&ctz=Asia/Kolkata&location=" + encodeURIComponent(ADDRESS) +
+      "&details=" + encodeURIComponent("Kavya & Suhas · Lotus Arena, Doddaballapur");
+  }
+
+  var msg = "You're invited to the wedding of Kavya & Suhas · Friday, 4 December 2026 · Lotus Arena, Bengaluru\n" + INVITE_URL;
+  document.getElementById("wa").href = "https://wa.me/?text=" + encodeURIComponent(msg);
+
+  // countdown
+  var target = new Date("2026-12-04T08:30:00+05:30").getTime();
+  function cd(k){ return document.getElementById("cd-"+k); }
+  var el = {d:cd("d"),h:cd("h"),m:cd("m"),s:cd("s")};
+  function pad(n){ return String(n).padStart(2,"0"); }
+  function tick(){
+    var t = Math.max(0, target - Date.now());
+    el.d.textContent = pad(Math.floor(t/864e5));
+    el.h.textContent = pad(Math.floor(t/36e5)%24);
+    el.m.textContent = pad(Math.floor(t/6e4)%60);
+    el.s.textContent = pad(Math.floor(t/1e3)%60);
+  }
+  tick(); setInterval(tick, 1000);
+
+  // names settle in letter by letter
+  var n = document.getElementById("coverNames"), txt = n.textContent; n.textContent = "";
+  Array.from(txt).forEach(function(ch, i){
+    var s = document.createElement("span");
+    s.textContent = ch === " " ? " " : ch;
+    s.setAttribute("aria-hidden","true");
+    s.style.animationDelay = (1.9 + i*0.08) + "s";
+    n.appendChild(s);
+  });
+
+  // cover lifts away softly
+  var cover = document.getElementById("cover"), opened = false;
+  document.body.classList.add("locked");
+  function open(){
+    if (opened) return; opened = true;
+    cover.classList.add("gone");
+    document.body.classList.remove("locked");
+  }
+  cover.addEventListener("click", open);
+  cover.addEventListener("keydown", function(e){ if(e.key==="Enter"||e.key===" "){ e.preventDefault(); open(); } });
+  setTimeout(open, 8000);
+})();
+</script>
+
+</body>
+</html>
