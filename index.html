@@ -118,10 +118,10 @@ body.locked{overflow:hidden;height:100%}
 .ornament::after{background:linear-gradient(270deg,transparent,rgba(184,149,94,.6))}
 
 /* ---------- Countdown + events ---------- */
-.event{display:flex;flex-direction:column;align-items:center;gap:6px;width:100%}
-.event h3{margin:0;font-family:var(--script);font-weight:400;font-size:46px;line-height:.9;color:var(--bronze)}
-.event .when{font-size:19px}
-.event .time{font-family:var(--caps);letter-spacing:.18em;color:var(--gold);font-size:16px}
+.event{display:flex;flex-direction:column;align-items:center;gap:12px;width:100%}
+.event h3{margin:0 0 4px;font-family:var(--script);font-weight:400;font-size:clamp(62px,17vw,76px);line-height:.85;color:var(--bronze)}
+.event .when{font-family:var(--serif);font-size:23px;font-weight:400;color:var(--ink);letter-spacing:.02em}
+.event .time{font-family:var(--caps);letter-spacing:.2em;color:var(--bronze);font-size:18px}
 .sep{width:60px;height:.75px;background:linear-gradient(90deg,transparent,var(--gold),transparent);margin-block:12px}
 
 /* ---------- Closing ---------- */
