@@ -118,10 +118,6 @@ body.locked{overflow:hidden;height:100%}
 .ornament::after{background:linear-gradient(270deg,transparent,rgba(184,149,94,.6))}
 
 /* ---------- Countdown + events ---------- */
-.count{display:grid;grid-template-columns:repeat(4,1fr);gap:4px;width:100%;max-width:290px}
-.count div{display:grid;gap:4px}
-.count b{font-family:var(--serif);font-weight:300;font-size:38px;line-height:1;color:var(--bronze);font-variant-numeric:tabular-nums lining-nums}
-.count span{font-family:var(--caps);font-size:12px;letter-spacing:.2em;color:var(--muted)}
 .event{display:flex;flex-direction:column;align-items:center;gap:6px;width:100%}
 .event h3{margin:0;font-family:var(--script);font-weight:400;font-size:46px;line-height:.9;color:var(--bronze)}
 .event .when{font-size:19px}
@@ -218,14 +214,6 @@ body.locked .lift{transform:translateY(12px);opacity:.001}
     <svg class="corner tl"><use href="#lotus-corner"/></svg><svg class="corner tr"><use href="#lotus-corner"/></svg>
     <svg class="corner bl"><use href="#lotus-corner"/></svg><svg class="corner br"><use href="#lotus-corner"/></svg>
     <div class="card-body">
-      <h2 class="title">The celebration begins in</h2>
-      <div class="count" id="count">
-        <div><b id="cd-d">00</b><span>Days</span></div>
-        <div><b id="cd-h">00</b><span>Hrs</span></div>
-        <div><b id="cd-m">00</b><span>Mins</span></div>
-        <div><b id="cd-s">00</b><span>Secs</span></div>
-      </div>
-      <div class="sep"></div>
 
       <div class="event">
         <h3>Wedding</h3>
@@ -273,20 +261,6 @@ body.locked .lift{transform:translateY(12px);opacity:.001}
 
   var msg = "You're invited to the wedding of Kavya & Suhas · Friday, 4 December 2026 · Lotus Arena, Bengaluru\n" + INVITE_URL;
   document.getElementById("wa").href = "https://wa.me/?text=" + encodeURIComponent(msg);
-
-  // countdown
-  var target = new Date("2026-12-04T08:30:00+05:30").getTime();
-  function cd(k){ return document.getElementById("cd-"+k); }
-  var el = {d:cd("d"),h:cd("h"),m:cd("m"),s:cd("s")};
-  function pad(n){ return String(n).padStart(2,"0"); }
-  function tick(){
-    var t = Math.max(0, target - Date.now());
-    el.d.textContent = pad(Math.floor(t/864e5));
-    el.h.textContent = pad(Math.floor(t/36e5)%24);
-    el.m.textContent = pad(Math.floor(t/6e4)%60);
-    el.s.textContent = pad(Math.floor(t/1e3)%60);
-  }
-  tick(); setInterval(tick, 1000);
 
   // names settle in letter by letter
   var n = document.getElementById("coverNames"), txt = n.textContent; n.textContent = "";
