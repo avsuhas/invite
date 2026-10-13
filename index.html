@@ -241,7 +241,6 @@ body.locked .lift{transform:translateY(12px);opacity:.001}
   <section class="closing">
     <h2>We look forward to celebrating with you</h2>
     <p>Your presence is our blessing.</p>
-    <a class="btn" id="wa" target="_blank" rel="noopener"><svg><use href="#i-chat"/></svg>Share via WhatsApp</a>
     <div class="sig">Kavya &amp; Suhas · 2026</div>
   </section>
 </main>
@@ -259,8 +258,6 @@ body.locked .lift{transform:translateY(12px);opacity:.001}
       "&details=" + encodeURIComponent("Kavya & Suhas · Lotus Arena, Doddaballapur");
   }
 
-  var msg = "You're invited to the wedding of Kavya & Suhas · Friday, 4 December 2026 · Lotus Arena, Bengaluru\n" + INVITE_URL;
-  document.getElementById("wa").href = "https://wa.me/?text=" + encodeURIComponent(msg);
 
   // names settle in letter by letter
   var n = document.getElementById("coverNames"), txt = n.textContent; n.textContent = "";
